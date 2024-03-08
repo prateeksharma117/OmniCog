@@ -57,6 +57,7 @@ export const formUrlQuery = ({
   key,
   value,
 }: FormUrlQueryParams) => {
+  
   const params = { ...qs.parse(searchParams.toString()), [key]: value };
 
   return `${window.location.pathname}?${qs.stringify(params, {

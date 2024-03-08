@@ -48,7 +48,7 @@ export const navLinks = [
   {
     label: "Buy Credits",
     route: "/credits",
-    icon: <Gem size={24} color="#fe4a65" />,
+    icon: <Gem size={24} color="#bd3729" />,
   },
 ];
 
@@ -56,7 +56,7 @@ export const plans = [
   {
     _id: 1,
     name: "Free",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/credits.png",
     price: 0,
     credits: 20,
     inclusions: [
@@ -81,7 +81,7 @@ export const plans = [
   {
     _id: 2,
     name: "Pro Package",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/credits.png",
     price: 40,
     credits: 120,
     inclusions: [
@@ -106,7 +106,7 @@ export const plans = [
   {
     _id: 3,
     name: "Premium Package",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/credits.png",
     price: 199,
     credits: 2000,
     inclusions: [
@@ -136,21 +136,21 @@ export const transformationTypes = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: "image.svg",
+    icon: <Image size={24} />,
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: "camera.svg",
+    icon: <Camera size={24}/>,
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: "stars.svg",
+    icon: <Sparkles size={24} />,
   },
   remove: {
     type: "remove",
@@ -159,7 +159,7 @@ export const transformationTypes = {
     config: {
       remove: { prompt: "", removeShadow: true, multiple: true },
     },
-    icon: "scan.svg",
+    icon: <ScanLine size={24}/>,
   },
   recolor: {
     type: "recolor",
@@ -168,7 +168,7 @@ export const transformationTypes = {
     config: {
       recolor: { prompt: "", to: "", multiple: true },
     },
-    icon: "filter.svg",
+    icon: <Palette size={24}/>,
   },
 };
 

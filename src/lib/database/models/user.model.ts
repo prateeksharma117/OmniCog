@@ -9,7 +9,7 @@ const ImageSchema = new Schema({
   lastName: {type:String},
   planId: {type:Number,default:1},
   planType: {type:String,default:"Free"},
-  creditBalance:{type:Number,default:50},
+  creditBalance:{type:Number,default:5},
 });
 
 const User = models?.User || model("User", ImageSchema);

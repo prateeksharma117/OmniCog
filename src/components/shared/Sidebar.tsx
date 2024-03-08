@@ -8,9 +8,30 @@ import React from "react";
 import { navLinks } from "../../../constants";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
+import Lottie from "react-lottie";
+import * as freePlan from "../../../public/freeplan.json";
+import * as proPlan from "../../../public/proplan.json";
 
 const Sidebar = () => {
   const pathname = usePathname();
+
+  const freePlanOption = {
+    loop: true,
+    autoplay: true,
+    animationData: freePlan,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const proPlanOption = {
+    loop: true,
+    autoplay: true,
+    animationData: proPlan,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <aside className="sidebar">
@@ -67,9 +88,7 @@ const Sidebar = () => {
               })}
               <li className=" flex justify-between items-center  cursor-pointer gap-2 p-4">
                 <UserButton afterSignOutUrl="/dashboard" showName />
-                <p className=" px-1 py-1 bg-green-400 text-sm rounded-lg">
-                  Free
-                </p>
+                <Lottie options={proPlanOption} height={40} width={40} />
               </li>
             </ul>
           </SignedIn>
