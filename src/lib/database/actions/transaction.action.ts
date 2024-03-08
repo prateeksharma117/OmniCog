@@ -26,7 +26,7 @@ export async function checkoutCredits(transaction:CheckoutTransactionParams) {
         },
       ],
       metadata: {
-        plan: transaction.plans,
+        plan: transaction.plan,
         credits: transaction.credits,
         buyerId: transaction.buyerId,
       },
