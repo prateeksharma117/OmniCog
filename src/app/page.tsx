@@ -85,7 +85,7 @@ export default function Home() {
                     src="/promo.mp4"
                     loop
                     autoPlay={true}
-                    playsInline
+                    controls
                     className=" rounded-2xl"
                   ></video>
                 </div>
