@@ -1,6 +1,6 @@
 import {
   Home,
-  Image,
+  Images,
   Sparkles,
   ScanLine,
   Palette,
@@ -18,7 +18,7 @@ export const navLinks = [
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
-    icon: <Image size={24} color="#ffa417" />,
+    icon: <Images size={24} color="#ffa417" />,
   },
   {
     label: "Generative Fill",
@@ -136,7 +136,7 @@ export const transformationTypes = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: <Image size={24} />,
+    icon: <Images size={24} />,
   },
   removeBackground: {
     type: "removeBackground",
