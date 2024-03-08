@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
@@ -73,4 +73,4 @@ const Checkout = ({
   );
 };
 
-export default Checkout;
+export default Checkout; */
