@@ -21,7 +21,7 @@ import { transformationTypes } from "../../../constants";
 import { IImage } from "@/lib/database/models/image.model";
 
 export const Collection = ({
-    hasSearch = false,
+    hasSearch = true,
     images,
     totalPages = 1,
     page,

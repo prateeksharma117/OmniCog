@@ -1,16 +1,14 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { ArrowRight, Play, Wand2 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
-import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
 import Checkout from "@/components/shared/Checkout";
 
 export default function Home() {
-
-  const handleScroll = (targetId:string) => {
+  const handleScroll = (targetId: string) => {
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
@@ -83,14 +81,13 @@ export default function Home() {
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
               <div className="mt-16 flow-root sm:mt-24">
                 <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                  <Image
-                    src="/dashboard-preview.jpg"
-                    alt="product preview"
-                    width={1364}
-                    height={732}
-                    quality={100}
-                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
-                  />
+                  <video
+                    src="/promo.mp4"
+                    loop
+                    autoPlay={true}
+                    playsInline
+                    className=" rounded-2xl"
+                  ></video>
                 </div>
               </div>
             </div>

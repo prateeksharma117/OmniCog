@@ -22,7 +22,7 @@ const Navbar = () => {
           <div className="hidden items-center space-x-4 sm:flex">
             <>
               <Link
-                href="/pricing"
+                href="/credits"
                 className={buttonVariants({
                   variant: "ghost",
                   size: "sm",
@@ -68,19 +68,21 @@ const Navbar = () => {
             }`}
           >
             {/* Add your mobile menu content here */}
-            <div className="flex flex-col rounded-br-lg absolute top-0 right-0 items-center  shadow-lg font-bold w-1/2  border-b border-gray-200 bg-white/75 backdrop-blur-3xl transition-all">
+            <div className="flex flex-col rounded-br-lg absolute top-0 right-0 items-center bg-white shadow-lg font-bold w-1/2 transition-all">
               <Link
                 href="/pricing"
                 className="py-3 text-gray-800 hover:bg-gray-100 w-full text-center rounded-sm hover:shadow-md"
               >
                 Pricing
               </Link>
+              <div className=" border border-gray-100 w-full"></div>
               <Link
                 href="/sign-in"
                 className="py-3 text-gray-800 hover:bg-gray-100 w-full text-center rounded-sm hover:shadow-md"
               >
                 Sign in
               </Link>
+              <div className=" border border-gray-100 w-full"></div>
               <Link
                 href="/dashboard"
                 className="py-3 text-gray-800 hover:bg-gray-100 w-full text-center rounded-sm hover:shadow-md"
