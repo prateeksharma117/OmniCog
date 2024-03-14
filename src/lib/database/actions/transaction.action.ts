@@ -8,47 +8,50 @@ import { connectToDatabase } from "../mongoose";
 import Transaction from "../models/transaction.model";
 import { updateCredits } from "./user.action";
 
-export async function checkoutCredits(transaction:CheckoutTransactionParams) {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-    const amount=Number(transaction.amount)*100
+export async function checkoutCredits(transaction: CheckoutTransactionParams) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  const amount = Number(transaction.amount) * 100
 
-    const session = await stripe.checkout.sessions.create({
-      line_items: [
-        {
-          price_data: {
-            currency: "inr",
-            unit_amount: amount,
-            product_data: {
-              name: transaction.plan,
-            },
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    line_items: [
+      {
+        price_data: {
+          currency: "USD",
+          unit_amount: amount,
+          product_data: {
+            name: transaction.plan,
           },
-          quantity: 1,
         },
-      ],
-      metadata: {
-        plan: transaction.plan,
-        credits: transaction.credits,
-        buyerId: transaction.buyerId,
+        quantity: 1,
       },
-      mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/dashboard`,
-    });
+    ],
+    billing_address_collection: "required",
+    metadata: {
+      plan: transaction.plan,
+      credits: transaction.credits,
+      buyerId: transaction.buyerId,
+    },
 
-    redirect(session.url!)
+    mode: "payment",
+    success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
+    cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/dashboard`,
+  });
+
+  redirect(session.url!)
 }
 
-export async function createTransaction(transaction:CreateTransactionParams) {
-    try {
-        await connectToDatabase()
+export async function createTransaction(transaction: CreateTransactionParams) {
+  try {
+    await connectToDatabase()
 
-        const newTransaction = await Transaction.create({
-            ...transaction,buyer: transaction.buyerId,
-        })
-        await updateCredits(transaction.buyerId,transaction.credits)
+    const newTransaction = await Transaction.create({
+      ...transaction, buyer: transaction.buyerId,
+    })
+    await updateCredits(transaction.buyerId, transaction.credits)
 
-        return JSON.parse(JSON.stringify(newTransaction))
-    } catch (error) {
-        handleError(error)
-    }
+    return JSON.parse(JSON.stringify(newTransaction))
+  } catch (error) {
+    handleError(error)
+  }
 }
