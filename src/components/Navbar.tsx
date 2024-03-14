@@ -31,7 +31,7 @@ const Navbar = () => {
                 Pricing
               </Link>
               <Link
-                href="/sign-in"
+                href="/dashboard"
                 className={buttonVariants({
                   variant: "ghost",
                   size: "sm",
@@ -77,7 +77,7 @@ const Navbar = () => {
               </Link>
               <div className=" border border-gray-100 w-full"></div>
               <Link
-                href="/sign-in"
+                href="/dashboard"
                 className="py-3 text-gray-800 hover:bg-gray-100 w-full text-center rounded-sm hover:shadow-md"
               >
                 Sign in

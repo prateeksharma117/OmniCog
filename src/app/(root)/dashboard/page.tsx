@@ -24,8 +24,12 @@ const page =async ({searchParams}:SearchParamProps) => {
               href={link.route}
               className="flex-center flex-col gap-2"
             >
-              <li className=" flex-center w-fit rounded-full bg-white p-4">{link.icon}</li>
-              <p className=" p-14-medium text-center text-white">{link.label}</p>
+              <li className=" flex-center w-fit rounded-full bg-white p-4">
+                {link.icon}
+              </li>
+              <p className=" p-14-medium text-center text-white">
+                {link.label}
+              </p>
             </Link>
           ))}
         </ul>
@@ -33,10 +37,10 @@ const page =async ({searchParams}:SearchParamProps) => {
 
       <section>
         <Collection
-        hasSearch={true}
-        images={images?.data}
-        totalPages={images?.totalPages}
-        page={page}
+          hasSearch={true}
+          images={images?.data}
+          totalPages={images?.totalPages}
+          page={page}
         />
       </section>
     </>
