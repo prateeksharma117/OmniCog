@@ -1,6 +1,7 @@
-import { Schema, model, models } from "mongoose";
+import { ObjectId, Schema, model, models } from "mongoose";
 
 export interface IImage extends Document {
+  _id:ObjectId;
   title: string;
   transformationType: string;
   publicId: string;
