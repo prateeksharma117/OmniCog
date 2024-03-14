@@ -147,7 +147,7 @@ const TransformationForm = ({
       });
 
       const imageData = {
-        title: value.title,
+        title: value.title.toLowerCase(),
         publicId: image?.publicId,
         transformationType: type,
         width: image?.width,
