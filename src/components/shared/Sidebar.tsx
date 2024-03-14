@@ -50,7 +50,7 @@ const Sidebar = () => {
               {navLinks.slice(0, 6).map((link) => {
                 const isActive = link.route === pathname;
                 const gradientClass = isActive
-                  ? "shadow-md backdrop-blur-lg"
+                  ? "shadow-md bg-gradient-to-r from-pink-500 to-violet-600 text-white from-indigo-500 to-blue-500"
                   : "";
 
                 return (
@@ -77,7 +77,7 @@ const Sidebar = () => {
               {navLinks.slice(6).map((link) => {
                 const isActive = link.route === pathname;
                 const gradientClass = isActive
-                  ? "shadow-md backdrop-blur-lg"
+                  ? "shadow-md backdrop-blur-lg bg-gradient-to-r from-pink-500 to-violet-600 text-white"
                   : "";
 
                 return (

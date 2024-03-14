@@ -12,6 +12,7 @@ import { AlignCenter } from "lucide-react";
 import { navLinks } from "../../../constants";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const MobileNav = () => {
 
@@ -36,19 +37,25 @@ const MobileNav = () => {
                 {navLinks.map((link) => {
                   const isActive = link.route === pathname;
                   const gradientClass = isActive
-                    ? " text-[#1673b7] shadow-sm p-18"
+                    ? "bg-gradient-to-r from-pink-500 to-violet-600 text-white  rounded-lg shadow-sm"
                     : "";
 
                   return (
                     <li
                       key={link.route}
-                      className={` flex whitespace-nowrap text-dark-700 ${gradientClass}`}
+                      className={` flex whitespace-nowrap  text-dark-700 ${gradientClass}`}
                     >
                       <Link
-                        className="sidebar-link cursor-pointer"
+                        className="sidebar-link cursor-pointer "
                         href={link.route}
                       >
-                        {link.icon}
+                        <Image
+                          src={link.icon}
+                          alt="logo"
+                          width={24}
+                          height={24}
+                          className={`${isActive && "brightness-200"}`}
+                        />
                         {link.label}
                       </Link>
                     </li>
