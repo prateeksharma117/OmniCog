@@ -1,57 +1,46 @@
-import {
-  IoHomeOutline,
-  IoImagesOutline,
-  IoCameraOutline,
-} from "react-icons/io5";
-import { PiMagicWandLight } from "react-icons/pi";
-import { AiOutlineScan } from "react-icons/ai";
-import { MdOutlineColorLens } from "react-icons/md";
-import { FiUser } from "react-icons/fi";
-import { LuGem } from "react-icons/lu";
 
 export const navLinks = [
   {
     label: "Home",
     route: "/dashboard",
-    icon: <IoHomeOutline size={24} color="#40a1ff" />,
+    icon: "/icons/home.svg",
   },
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
-    icon: <IoImagesOutline size={24} color="#ffa417" />,
+    icon: "/icons/image.svg",
   },
   {
     label: "Generative Fill",
     route: "/transformations/add/fill",
-    icon: <PiMagicWandLight size={24} color="#82d135" />,
+    icon: "/icons/stars.svg",
   },
   {
     label: "Object Remove",
     route: "/transformations/add/remove",
-    icon: <AiOutlineScan size={24} color="#b145e7" />,
+    icon: "/icons/scan.svg",
   },
   {
     label: "Object Recolor",
     route: "/transformations/add/recolor",
-    icon: <MdOutlineColorLens size={24} color="#ffce14" />,
+    icon: "/icons/filter.svg",
   },
   {
     label: "Background Remove",
     route: "/transformations/add/removeBackground",
-    icon: <IoCameraOutline size={24} color="#d4d6db" />,
+    icon: "/icons/camera.svg",
   },
   {
     label: "Profile",
     route: "/profile",
-    icon: <FiUser size={24} color="#6a71e6" />,
+    icon: "/icons/profile.svg",
   },
   {
     label: "Buy Credits",
     route: "/credits",
-    icon: <LuGem size={24} color="#bd3729" />,
+    icon: "/icons/bag.svg",
   },
 ];
-
 export const plans = [
   {
     _id: 1,
@@ -136,21 +125,21 @@ export const transformationTypes = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: <IoImagesOutline size={24} />,
+    icon: "image.svg",
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: <IoCameraOutline size={24} />,
+    icon: "camera.svg",
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: <PiMagicWandLight size={24} />,
+    icon: "stars.svg",
   },
   remove: {
     type: "remove",
@@ -159,7 +148,7 @@ export const transformationTypes = {
     config: {
       remove: { prompt: "", removeShadow: true, multiple: true },
     },
-    icon: <AiOutlineScan size={24} />,
+    icon: "scan.svg",
   },
   recolor: {
     type: "recolor",
@@ -168,7 +157,7 @@ export const transformationTypes = {
     config: {
       recolor: { prompt: "", to: "", multiple: true },
     },
-    icon: <MdOutlineColorLens size={24} />,
+    icon: "filter.svg",
   },
 };
 

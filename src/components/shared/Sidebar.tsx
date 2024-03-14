@@ -59,7 +59,13 @@ const Sidebar = () => {
                     className={`sidebar-nav_element hover:scale-95 group ${gradientClass}`}
                   >
                     <Link className="sidebar-link" href={link.route}>
-                      {link.icon}
+                      <Image
+                        src={link.icon}
+                        alt="logo"
+                        width={24}
+                        height={24}
+                        className={`${isActive && "brightness-200"}`}
+                      />
                       {link.label}
                     </Link>
                   </li>
@@ -80,7 +86,13 @@ const Sidebar = () => {
                     className={`sidebar-nav_element hover:scale-95 group ${gradientClass}`}
                   >
                     <Link className="sidebar-link" href={link.route}>
-                      {link.icon}
+                      <Image
+                        src={link.icon}
+                        alt="logo"
+                        width={24}
+                        height={24}
+                        className={`${isActive && "brightness-200"}`}
+                      />
                       {link.label}
                     </Link>
                   </li>

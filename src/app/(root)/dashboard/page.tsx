@@ -3,6 +3,7 @@ import { navLinks } from "../../../../constants";
 import Link from "next/link";
 import { Collection } from "@/components/shared/Collections";
 import { getAllImages } from "@/lib/database/actions/image.action";
+import Image from "next/image";
 
 const page =async ({searchParams}:SearchParamProps) => {
   
@@ -25,7 +26,12 @@ const page =async ({searchParams}:SearchParamProps) => {
               className="flex-center flex-col gap-2"
             >
               <li className=" flex-center w-fit rounded-full bg-white p-4">
-                {link.icon}
+                <Image
+                  src={link.icon}
+                  alt="logo"
+                  width={24}
+                  height={24}
+                />
               </li>
               <p className=" p-14-medium text-center text-white">
                 {link.label}
