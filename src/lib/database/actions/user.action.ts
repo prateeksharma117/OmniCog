@@ -1,13 +1,12 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import User from "../models/user.model";
 import { connectToDatabase } from "../mongoose";
 import { handleError } from "@/lib/utils";
+import User from "../models/user.model";
 
 // CREATE
 export async function createUser(user: CreateUserParams) {
-  
   try {
     await connectToDatabase();
 
