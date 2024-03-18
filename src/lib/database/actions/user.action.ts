@@ -5,6 +5,8 @@ import { connectToDatabase } from "../mongoose";
 import User from "../models/user.model";
 import { handleError } from "@/lib/utils";
 
+
+
 // CREATE
 export async function createUser(user: CreateUserParams) {
   try {
