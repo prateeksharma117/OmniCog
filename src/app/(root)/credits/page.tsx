@@ -11,7 +11,7 @@ import { Check, X, Zap } from "lucide-react";
 
 const CreditsPage = async () => {
   const { userId } = auth();
-
+  console.log(userId);
   if (!userId) redirect("/sign-in");
 
   const user = await getUserById(userId);
