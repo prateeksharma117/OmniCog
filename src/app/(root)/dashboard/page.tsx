@@ -4,12 +4,14 @@ import Link from "next/link";
 import { Collection } from "@/components/shared/Collections";
 import { getAllImages } from "@/lib/database/actions/image.action";
 import Image from "next/image";
+import User from "@/lib/database/models/user.model";
+import { redirect } from "next/navigation";
+import { currentUser } from "@clerk/nextjs";
 
-const page =async ({searchParams}:SearchParamProps) => {
-  
+const page = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
-  const searchQuery=(searchParams?.query as string)||""
-  const images=await getAllImages({page,searchQuery})
+  const searchQuery = (searchParams?.query as string) || "";
+  const images = await getAllImages({ page, searchQuery });
 
   return (
     <>
@@ -26,12 +28,7 @@ const page =async ({searchParams}:SearchParamProps) => {
               className="flex-center flex-col gap-2"
             >
               <li className=" flex-center w-fit rounded-full bg-white p-4">
-                <Image
-                  src={link.icon}
-                  alt="logo"
-                  width={24}
-                  height={24}
-                />
+                <Image src={link.icon} alt="logo" width={24} height={24} />
               </li>
               <p className=" p-14-medium text-center text-white">
                 {link.label}
