@@ -70,7 +70,7 @@ const Navbar = () => {
             {/* Add your mobile menu content here */}
             <div className="flex flex-col rounded-br-lg absolute top-0 right-0 items-center bg-white shadow-lg font-bold w-1/2 transition-all">
               <Link
-                href="/pricing"
+                href="/credits"
                 className="py-3 text-gray-800 hover:bg-gray-100 w-full text-center rounded-sm hover:shadow-md"
               >
                 Pricing
